@@ -27,7 +27,6 @@ function proximaRodada() {
 
     document.getElementById("rodada").textContent = rodada;
 
-    iniciarTempo();
 }
 
 function alterarPontos(jogador, valor) {
