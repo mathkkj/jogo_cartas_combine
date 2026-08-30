@@ -2,7 +2,7 @@ let rodada = 1;
 let tempo = 45;
 let intervalo;
 
-let pontos = [8, 6, 4, 2];
+let pontos = [0, 0, 0, 0];
 
 function iniciarTempo() {
     clearInterval(intervalo);
