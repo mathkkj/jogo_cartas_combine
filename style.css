@@ -1,114 +1,316 @@
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
+    background: #eee7d8;
+    color: #252525;
     padding: 20px;
 }
 
 .container {
+    width: 100%;
     max-width: 500px;
     margin: auto;
 }
 
 h1 {
     text-align: center;
+    font-size: 28px;
     margin-bottom: 20px;
 }
 
-.status {
+
+/* timer */
+
+.timer-area {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-template-columns: 1fr 70px;
+    gap: 8px;
+    margin-bottom: 25px;
 }
 
-.card,
-.jogador,
-.ampulheta {
-    background: white;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 2px 6px #ddd;
-}
-
-.card {
-    text-align: center;
-}
-
-.card span {
-    display: block;
-    font-size: 14px;
-}
-
-.card strong {
-    font-size: 24px;
-}
-
-.ampulheta {
-    text-align: center;
-    margin: 15px 0;
-}
-
-.ampulheta h2 {
-    font-size: 60px;
-}
-
-button {
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    background: #222;
+.timer {
+    height: 180px;
+    background: #252525;
     color: white;
-    font-size: 16px;
-    cursor: pointer;
+    border: 3px solid #252525;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.leaderboard h2 {
+.timer span {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.timer h2 {
+    font-size: 70px;
+    line-height: 1;
+    margin-top: 8px;
+}
+
+.timer-controles {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.timer-controles button {
+    flex: 1;
+    font-size: 24px;
+    padding: 0;
+    background: #fffaf0;
+}
+
+
+/* jogadores */
+
+.jogadores-area h2,
+.pontos-area h2 {
+    font-size: 21px;
+    border-bottom: 3px solid #252525;
+    padding-bottom: 6px;
     margin-bottom: 10px;
 }
 
-.jogador {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
+.lista-jogadores {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
 }
+
+.bloco-jogador {
+    background: #fffaf0;
+    border: 2px solid #252525;
+    padding: 15px;
+    min-height: 90px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.posicao {
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+.nome-jogador {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.pontos-jogador {
+    color: #b63b32;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* controle de pontos */
+
+.pontos-area {
+    margin-top: 25px;
+}
+
+.controles-jogadores {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.controle-jogador {
+    background: #fffaf0;
+    border: 2px solid #252525;
+    padding: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.controle-nome {
+    flex: 1;
+    font-weight: bold;
+    cursor: text;
+
+    border-bottom: 1px dashed #aaa;
+    padding: 5px 4px;
+
+    min-width: 0;
+}
+
+.controle-nome:focus {
+    outline: none;
+    border-bottom: 2px solid #3c628c;
+}
+
+.botoes-pontos {
+    display: flex;
+    gap: 5px;
+    margin-left: 8px;
+}
+
+.botoes-pontos button {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    font-size: 20px;
+}
+
+
+/* quantidade de jogadores */
+
+.controle-quantidade {
+    margin-top: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #252525;
+    color: white;
+
+    padding: 8px;
+}
+
+.controle-quantidade button {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+
+    background: #e7b44b;
+    color: #252525;
+
+    font-size: 25px;
+}
+
+
+/* botões */
+
+button {
+    border: 2px solid #252525;
+    background: #fffaf0;
+    color: #252525;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+
+/* próxima rodada */
 
 .proxima {
     width: 100%;
     margin-top: 15px;
+    padding: 13px;
+
+    background: #3c628c;
+    color: white;
 }
+
+
+/* reset */
 
 .resetar {
     width: 100%;
-    margin-top: 10px;
-    background: #c0392b;
+    margin-top: 8px;
+    padding: 11px;
+
+    background: #b63b32;
+    color: white;
 }
 
-.jogador {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
+
+/* alerta do timer */
+
+@keyframes piscarTimer {
+    0%, 100% {
+        background: #252525;
+    }
+
+    50% {
+        background: #b63b32;
+    }
 }
 
-.jogador strong {
-    display: block;
-    margin-top: 5px;
+.timer.alerta {
+    animation: piscarTimer 1s infinite;
 }
 
-.controles {
-    display: flex;
-    gap: 5px;
+
+/* tremer a tela */
+
+@keyframes tremerTela {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    20% {
+        transform: translate(-5px, 3px);
+    }
+
+    40% {
+        transform: translate(5px, -3px);
+    }
+
+    60% {
+        transform: translate(-4px, -2px);
+    }
+
+    80% {
+        transform: translate(4px, 2px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
 }
 
-.controles button {
-    width: 35px;
-    height: 35px;
-    padding: 0;
-    font-size: 20px;
+body.tremendo {
+    animation: tremerTela 0.3s;
+}
+
+
+/* celular pequeno */
+
+@media (max-width: 380px) {
+
+    body {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .timer {
+        height: 160px;
+    }
+
+    .timer h2 {
+        font-size: 58px;
+    }
+
+    .controle-nome {
+        font-size: 14px;
+    }
+
+    .botoes-pontos button {
+        width: 34px;
+        height: 34px;
+    }
 }

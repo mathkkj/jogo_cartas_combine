@@ -3,98 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Combine!</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <main class="container">
 
-        <h1>Combine!</h1>
+        <!-- timer -->
 
-        <section class="status">
-            <div class="card">
-                <span>Rodada</span>
-                <strong id="rodada">1</strong>
+        <section class="timer-area">
+
+            <div class="timer">
+                <span>RODADA <strong id="rodada">1</strong></span>
+                <h2 id="tempo">45</h2>
             </div>
 
-            <div class="card">
-                <span>Jogadores</span>
-                <strong id="jogadores">4</strong>
+            <div class="timer-controles">
+                <button onclick="iniciarTempo()" title="Continuar">
+                    ▶
+                </button>
+
+                <button onclick="pausarTempo()" title="Pausar">
+                    ⏸
+                </button>
+
+                <button onclick="voltarTempo()" title="Voltar 5 segundos">
+                    ↶
+                </button>
             </div>
 
-            <div class="card">
-                <span>Faltam</span>
-                <strong id="faltam">0</strong>
-            </div>
         </section>
 
-        <section class="ampulheta">
-            <h2 id="tempo">45</h2>
-            <p>segundos</p>
-            <button onclick="iniciarTempo()">Iniciar</button>
+
+        <!-- jogador -->
+
+        <section class="jogadores-area">
+
+            <h2>Jogadores</h2>
+
+            <div id="listaJogadores" class="lista-jogadores">
+            </div>
+
         </section>
-<section class="leaderboard">
-    <h2>Leaderboard</h2>
 
-    <div class="jogador">
-        <div>
-            <span>1º Jogador 1</span>
-            <strong id="pontos1">0 pts</strong>
-        </div>
 
-        <div class="controles">
-            <button onclick="alterarPontos(1, -1)">-</button>
-            <button onclick="alterarPontos(1, 1)">+</button>
-        </div>
-    </div>
+        <!-- controle de pontos -->
 
-    <div class="jogador">
-        <div>
-            <span>2º Jogador 2</span>
-            <strong id="pontos2">0 pts</strong>
-        </div>
+        <section class="pontos-area">
 
-        <div class="controles">
-            <button onclick="alterarPontos(2, -1)">-</button>
-            <button onclick="alterarPontos(2, 1)">+</button>
-        </div>
-    </div>
+            <h2>Pontos</h2>
 
-    <div class="jogador">
-        <div>
-            <span>3º Jogador 3</span>
-            <strong id="pontos3">0pts</strong>
-        </div>
+            <div id="controlesJogadores" class="controles-jogadores">
+                <!-- controles criados pelo JavaScript -->
+            </div>
 
-        <div class="controles">
-            <button onclick="alterarPontos(3, -1)">-</button>
-            <button onclick="alterarPontos(3, 1)">+</button>
-        </div>
-    </div>
+            <div class="controle-quantidade">
 
-    <div class="jogador">
-        <div>
-            <span>4º Jogador 4</span>
-            <strong id="pontos4">0 pts</strong>
-        </div>
+                <button onclick="adicionarJogador()">
+                    ＋
+                </button>
 
-        <div class="controles">
-            <button onclick="alterarPontos(4, -1)">-</button>
-            <button onclick="alterarPontos(4, 1)">+</button>
-        </div>
-    </div>
-</section>
+                <span id="quantidadeJogadores">4 jogadores</span>
+
+                <button onclick="removerJogador()">
+                    −
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- rodada -->
 
         <button class="proxima" onclick="proximaRodada()">
             Próxima rodada
         </button>
+
         <button class="resetar" onclick="resetarJogo()">
             Resetar jogo
         </button>
 
     </main>
 
+    <audio id="alarme" src="alarme.mp3"></audio>
+
     <script src="script.js"></script>
+
 </body>
 </html>
+
