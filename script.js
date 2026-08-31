@@ -1,4 +1,4 @@
-//variaveis base
+// variaveis base
 
 let rodada = 1;
 let tempo = 45;
@@ -7,9 +7,7 @@ let pausado = true;
 
 let jogadores = [
     { nome: "Jogador 1", pontos: 0 },
-    { nome: "Jogador 2", pontos: 0 },
-    { nome: "Jogador 3", pontos: 0 },
-    { nome: "Jogador 4", pontos: 0 }
+    { nome: "Jogador 2", pontos: 0 }
 ];
 
 
@@ -30,7 +28,7 @@ function iniciarTempo() {
             document.querySelector(".timer").classList.add("alerta");
         }
 
-        // Tempo acabou
+        // tempo acabou
         if (tempo <= 0) {
             clearInterval(intervalo);
             intervalo = null;
@@ -130,9 +128,7 @@ function renderizar() {
 
     jogadores.forEach((jogador, index) => {
 
-
         // bloco do jogador
-
 
         const bloco = document.createElement("div");
 
@@ -155,9 +151,7 @@ function renderizar() {
         lista.appendChild(bloco);
 
 
-
         // controle de pontos
-
 
         const controle = document.createElement("div");
 
@@ -191,9 +185,7 @@ function renderizar() {
 }
 
 
-
 // nome
-
 
 function alterarNome(index, nome) {
 
@@ -207,7 +199,6 @@ function alterarNome(index, nome) {
 
     renderizar();
 }
-
 
 
 // pontos
@@ -228,7 +219,8 @@ function alterarPontos(index, valor) {
 
 function adicionarJogador() {
 
-    if (jogadores.length >= 5) {
+    // limite de 4 jogadores
+    if (jogadores.length >= 4) {
         return;
     }
 
@@ -243,6 +235,7 @@ function adicionarJogador() {
 
 function removerJogador() {
 
+    // minimo de 2 jogadores
     if (jogadores.length <= 2) {
         return;
     }
@@ -254,7 +247,6 @@ function removerJogador() {
 
 
 // reset
-
 
 function resetarJogo() {
 
@@ -269,11 +261,10 @@ function resetarJogo() {
     rodada = 1;
     tempo = 45;
 
+    // volta para 2 jogadores
     jogadores = [
         { nome: "Jogador 1", pontos: 0 },
-        { nome: "Jogador 2", pontos: 0 },
-        { nome: "Jogador 3", pontos: 0 },
-        { nome: "Jogador 4", pontos: 0 }
+        { nome: "Jogador 2", pontos: 0 }
     ];
 
     document.getElementById("rodada").textContent = rodada;
@@ -286,8 +277,14 @@ function resetarJogo() {
     renderizar();
 }
 
+
+// fechar regras
+
 function fecharRegras() {
     document.getElementById("regras").style.display = "none";
 }
+
+
+// início
 
 renderizar();
