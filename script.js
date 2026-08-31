@@ -130,9 +130,9 @@ function renderizar() {
 
     jogadores.forEach((jogador, index) => {
 
-        
+
         // bloco do jogador
-        
+
 
         const bloco = document.createElement("div");
 
@@ -155,9 +155,9 @@ function renderizar() {
         lista.appendChild(bloco);
 
 
-        
+
         // controle de pontos
-        
+
 
         const controle = document.createElement("div");
 
@@ -286,6 +286,8 @@ function resetarJogo() {
     renderizar();
 }
 
-
+function fecharRegras() {
+    document.getElementById("regras").style.display = "none";
+}
 
 renderizar();

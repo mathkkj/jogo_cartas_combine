@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,166 @@
 </head>
 
 <body>
+    <!-- janela de regras -->
+    <div id="regras" class="regras-fundo">
+
+        <div class="regras">
+
+            <button class="fechar-regras" onclick="fecharRegras()">
+                ×
+            </button>
+
+            <h2>Regras do Jogo</h2>
+
+            <h3>1. Objetivo</h3>
+            <p>
+                Seja o primeiro jogador a alcançar <strong>15 pontos</strong>.
+                Para pontuar, os jogadores devem resolver desafios matemáticos
+                usando suas cartas.
+            </p>
+
+            <h3>2. Jogadores</h3>
+            <p>
+                A partida pode ter de <strong>2 a 4 jogadores</strong>.
+            </p>
+
+            <h3>3. Cartas</h3>
+
+            <p><strong>Cartas de número:</strong></p>
+            <p>
+                Possuem valores que podem ser usados para formar resultados.
+            </p>
+
+            <p><strong>Cartas de operador:</strong></p>
+            <p>
+                Permitem realizar operações matemáticas como +, −, × e ÷.
+            </p>
+
+            <p><strong>Cartas de desafio:</strong></p>
+            <p>
+                Indicam o objetivo matemático que deve ser cumprido.
+            </p>
+
+            <h3>4. Combinando as cartas</h3>
+
+            <p>
+                Uma carta pode ser usada sozinha ou combinada com outras cartas
+                por meio de operações matemáticas.
+            </p>
+
+            <p>
+                Também é possível juntar cartas de número para formar um número maior.
+                Por exemplo: <strong>2 e 5 → 25</strong>.
+            </p>
+
+            <p>
+                A ordem das cartas é importante:
+                <strong>25</strong> é diferente de <strong>52</strong>.
+            </p>
+
+            <h3>5. Preparação</h3>
+
+            <p>
+                Cada jogador começa com:
+            </p>
+
+            <ul>
+                <li>4 cartas de número</li>
+                <li>2 cartas de operador</li>
+                <li>1 carta de desafio</li>
+            </ul>
+
+            <p>
+                Todos começam com <strong>0 pontos</strong>.
+            </p>
+
+            <h3>6. Planejamento</h3>
+
+            <p>
+                Todos os jogadores jogam simultaneamente durante
+                <strong>45 segundos</strong>.
+            </p>
+
+            <p>
+                Durante esse tempo, os jogadores organizam suas cartas,
+                testam combinações e procuram uma solução para seu desafio.
+            </p>
+
+            <p>
+                Os jogadores não podem ajudar uns aos outros nem revelar
+                suas soluções durante o planejamento.
+            </p>
+
+            <h3>7. Resolução</h3>
+
+            <p>
+                Quando o tempo acabar, todos os jogadores apresentam suas soluções
+                e mostram as cartas utilizadas.
+            </p>
+
+            <h3>8. Pontuação</h3>
+
+            <p>
+                <strong>Fácil:</strong> +1 ponto
+            </p>
+
+            <p>
+                <strong>Médio:</strong> +2 pontos
+            </p>
+
+            <p>
+                <strong>Difícil:</strong> +3 pontos
+            </p>
+
+            <h3>9. Final da rodada</h3>
+
+            <p>
+                Depois da validação das respostas, cada jogador:
+            </p>
+
+            <ol>
+                <li>descarta as cartas utilizadas;</li>
+                <li>mantém as cartas que não utilizou;</li>
+                <li>compra apenas as cartas necessárias para completar sua mão;</li>
+                <li>recebe um novo desafio.</li>
+            </ol>
+
+            <h3>10. Vitória</h3>
+
+            <p>
+                O primeiro jogador a alcançar <strong>15 pontos</strong> vence a partida.
+            </p>
+
+            <h3>11. Desempate</h3>
+
+            <p>
+                Caso dois ou mais jogadores alcancem <strong>15 pontos ou mais
+                    na mesma rodada</strong>, os jogadores empatados realizam uma
+                rodada de desempate.
+            </p>
+
+            <p>
+                No desempate, todos os jogadores recebem um desafio da categoria
+                <strong>difícil</strong> e um novo conjunto de cartas.
+                O primeiro jogador a apresentar uma solução correta vence.
+            </p>
+
+            <h3>12. Resumo da rodada</h3>
+
+            <ol>
+                <li>Receber um novo desafio.</li>
+                <li>Formar uma solução durante 45 segundos.</li>
+                <li>Apresentar a resposta.</li>
+                <li>Validar a solução.</li>
+                <li>Receber os pontos.</li>
+                <li>Descartar as cartas utilizadas.</li>
+                <li>Comprar as cartas que faltam.</li>
+                <li>Receber um novo desafio.</li>
+                <li>Começar uma nova rodada.</li>
+            </ol>
+
+        </div>
+    </div>
 
     <main class="container">
 
@@ -95,5 +256,5 @@
     <script src="script.js"></script>
 
 </body>
-</html>
 
+</html>
